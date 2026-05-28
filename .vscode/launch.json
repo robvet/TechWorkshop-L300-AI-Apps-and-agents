@@ -23,15 +23,27 @@
             "cwd": "${workspaceFolder}/src/app/servers"
         },
 
+        // Fallback: original Windows-style launch configuration.
+        // {
+        //     "name": "Python: MCP API",
+        //     "type": "python",
+        //     "request": "launch",
+        //     "python": "${workspaceFolder}/src/venv/Scripts/python.exe",
+        //     "module": "uvicorn",
+        //     "cwd" : "${workspaceFolder}/src",
+        //     
+        //     "args": ["chat_app:app","--reload", "--port", "8000"]
+        // },
         {
-            "name": "Python: MCP API",
-            "type": "python",
+            "name": "Debug Chat App (FastAPI)",
+            "type": "debugpy",
             "request": "launch",
-            "python": "${workspaceFolder}/src/venv/Scripts/python.exe",
+            "python": "${workspaceFolder}/src/.venv/bin/python",
             "module": "uvicorn",
-            "cwd" : "${workspaceFolder}/src",
-            
-            "args": ["chat_app:app","--reload", "--port", "8000"]
+            "cwd": "${workspaceFolder}/src",
+            "args": ["chat_app:app", "--host", "0.0.0.0", "--port", "8000"],
+            "console": "integratedTerminal",
+            "justMyCode": false
         }
     ]
 }
