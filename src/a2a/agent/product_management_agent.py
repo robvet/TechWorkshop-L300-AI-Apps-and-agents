@@ -16,9 +16,7 @@ from agent_framework.openai import OpenAIChatClient, OpenAIChatOptions
 logger = logging.getLogger(__name__)
 load_dotenv()
 
-
-# region Chat Service Configuration
-
+# Chat Service Configuration
 def get_chat_client() -> OpenAIChatClient:
     """Return Azure OpenAI chat client using the v1 API with managed identity."""
     endpoint = os.getenv('gpt_endpoint')
@@ -35,8 +33,7 @@ def get_chat_client() -> OpenAIChatClient:
         credential=DefaultAzureCredential(),
     )
 
-# region Get Products
-
+# Get Products
 # Define function, get_products, which simulates retrieving product information
 # based on a natural language query. In a real-world scenario, this method would 
 # likely query a database or an external service to fetch relevant product data, 
@@ -94,9 +91,7 @@ class ResponseFormat(BaseModel):
 # endregion
 
 
-# region Agent Framework Agent
-
-
+# Agent Framework Agent
 class AgentFrameworkProductManagementAgent:
     """Wraps Microsoft Agent Framework-based agents to handle Zava product management tasks."""
 
