@@ -29,7 +29,7 @@ var registrySku = 'Standard'
 var tags = {
   Project: 'Tech Workshop L300 - AI Apps and Agents'
   Environment: 'Lab'
-  Owner: deployer().?userPrincipalName ?? deployer().objectId
+  Owner: deployer().objectId
   SecurityControl: 'ignore'
   CostControl: 'ignore'
 }
@@ -427,4 +427,3 @@ output storageAccountName string = storageAccount.name
 output container_registry_name string = containerRegistry.name
 output application_name string = containerApp.name
 output application_url string = containerApp.properties.configuration.ingress.fqdn
-
