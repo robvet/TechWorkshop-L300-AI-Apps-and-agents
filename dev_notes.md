@@ -10,6 +10,25 @@ ID: cora:1
 ID: cart-manager:1
 
 
+What colors of green paint do you have?
+I think I’m interested in Deep Forest. How many gallons would I need to paint a medium sized bedroom?
+How much of PROD0043 do you have in stock?
+Let’s add two gallons to the cart, please.
+Please also add one paint tray and two of your All-Purpose Wall Paint Brushes.
+What items are in my cart right now?
+
+
+
+
+# Build Docker Container
+ az acr build --registry 2x2oywo2ju4ngcosureg --image chat-app:latest --platform linux/amd64 --file Dockerfile .
+
+# Push container to ACR
+ az containerapp registry set \
+  --name app-2x2oywo2ju4ng \
+  --resource-group lab-05-27 \
+  --server 2x2oywo2ju4ngcosureg.azurecr.io \
+  --identity system
 
 
 
