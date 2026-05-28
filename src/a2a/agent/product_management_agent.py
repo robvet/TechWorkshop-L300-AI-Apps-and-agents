@@ -280,7 +280,3 @@ class AgentFrameworkProductManagementAgent:
             self.session = self.agent.create_session(session_id=session_id)
 
 
-# endregion
-
-
-
